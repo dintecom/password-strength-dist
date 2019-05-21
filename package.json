@@ -1,0 +1,43 @@
+{
+  "name": "@angular-material-extensions/password-strength",
+  "version": "3.8.1",
+  "description": "Material password strength meter to indicate how secure is the provided password",
+  "keywords": [
+    "ngx",
+    "library",
+    " angular",
+    " material",
+    " password",
+    " confirm password",
+    " password validation",
+    " password-strength",
+    " password-strength info",
+    " strength-meter"
+  ],
+  "author": {
+    "name": "anthonynahas",
+    "url": "https://github.com/anthonynahas"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/angular-material-extensions/password-strength.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angular-material-extensions/password-strength/issues"
+  },
+  "homepage": "https://github.com/angular-material-extensions/password-strength",
+  "schematics": "./schematics/collection.json",
+  "main": "./bundles/password-strength.umd.js",
+  "module": "./esm5/password-strength.es5.js",
+  "es2015": "./esm2015/password-strength.js",
+  "typings": "./password-strength.d.ts",
+  "peerDependencies": {
+    "@angular/animations": "^7.2.15",
+    "@angular/cdk": "^7.3.7",
+    "@angular/common": "^7.2.15",
+    "@angular/core": "^7.2.15",
+    "@angular/forms": "^7.2.15",
+    "@angular/material": "^7.3.7"
+  }
+}
