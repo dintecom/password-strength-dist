@@ -1,6 +1,6 @@
 {
   "name": "@angular-material-extensions/password-strength",
-  "version": "3.8.1",
+  "version": "4.0.0-beta",
   "description": "Material password strength meter to indicate how secure is the provided password",
   "keywords": [
     "ngx",
@@ -33,11 +33,11 @@
   "es2015": "./esm2015/password-strength.js",
   "typings": "./password-strength.d.ts",
   "peerDependencies": {
-    "@angular/animations": "^7.2.15",
-    "@angular/cdk": "^7.3.7",
-    "@angular/common": "^7.2.15",
-    "@angular/core": "^7.2.15",
-    "@angular/forms": "^7.2.15",
-    "@angular/material": "^7.3.7"
+    "@angular/animations": "^8.0.0",
+    "@angular/cdk": "^8.0.1",
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0",
+    "@angular/forms": "^8.0.0",
+    "@angular/material": "^8.0.1"
   }
 }
