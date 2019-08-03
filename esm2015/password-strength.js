@@ -351,7 +351,6 @@ MatPasswordStrengthComponent.decorators = [
 ];
 MatPasswordStrengthComponent.propDecorators = {
     password: [{ type: Input }],
-    customValidator: [{ type: Input }],
     externalError: [{ type: Input }],
     enableLengthRule: [{ type: Input }],
     enableLowerCaseLetterRule: [{ type: Input }],
@@ -360,6 +359,7 @@ MatPasswordStrengthComponent.propDecorators = {
     enableSpecialCharRule: [{ type: Input }],
     min: [{ type: Input }],
     max: [{ type: Input }],
+    customValidator: [{ type: Input }],
     onStrengthChanged: [{ type: Output }]
 };
 
@@ -540,7 +540,7 @@ MatPasswordStrengthInfoComponent.decorators = [
     </mat-card>
   `,
                 styles: [`
-    mat-card{flex-direction:row;place-content:stretch center;flex:1 1 0}mat-card,mat-card mat-card-content{box-sizing:border-box;display:flex;align-items:stretch}mat-card mat-card-content{flex-direction:column;max-width:100%;place-content:stretch flex-start}mat-card mat-card-content mat-icon{margin-right:10px}mat-card mat-card-content .info-row{flex-direction:row;box-sizing:border-box;display:flex;align-items:center}
+    mat-card{-webkit-box-orient:horizontal;flex-direction:row;place-content:stretch center;-webkit-box-flex:1;flex:1 1 0}mat-card,mat-card mat-card-content{-webkit-box-direction:normal;box-sizing:border-box;display:-webkit-box;display:flex;-webkit-box-align:stretch;align-items:stretch}mat-card mat-card-content{-webkit-box-orient:vertical;flex-direction:column;max-width:100%;place-content:stretch flex-start}mat-card mat-card-content mat-icon{margin-right:10px}mat-card mat-card-content .info-row{-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;box-sizing:border-box;display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center}
   `],
                 animations: [
                     // nice stagger effect when showing existing elements
@@ -682,16 +682,6 @@ MatPasswordStrengthModule.decorators = [
                 entryComponents: [MatPassToggleVisibilityComponent]
             },] },
 ];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 
 export { MatPassToggleVisibilityComponent, MatPasswordStrengthComponent, MatPasswordStrengthInfoComponent, MatPasswordStrengthModule, MatPasswordStrengthValidator, RegExpValidator, shake as ɵa };
 //# sourceMappingURL=password-strength.js.map

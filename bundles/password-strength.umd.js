@@ -415,7 +415,6 @@
         ];
         MatPasswordStrengthComponent.propDecorators = {
             password: [{ type: core.Input }],
-            customValidator: [{ type: core.Input }],
             externalError: [{ type: core.Input }],
             enableLengthRule: [{ type: core.Input }],
             enableLowerCaseLetterRule: [{ type: core.Input }],
@@ -424,6 +423,7 @@
             enableSpecialCharRule: [{ type: core.Input }],
             min: [{ type: core.Input }],
             max: [{ type: core.Input }],
+            customValidator: [{ type: core.Input }],
             onStrengthChanged: [{ type: core.Output }]
         };
         return MatPasswordStrengthComponent;
@@ -518,7 +518,7 @@
                         selector: 'mat-password-strength-info',
                         exportAs: 'matPasswordStrengthInfo',
                         template: "\n    <mat-card @list>\n      <mat-card-content>\n        <div class=\"info-row\" @items *ngIf=\"passwordComponent.enableLowerCaseLetterRule\">\n          <div *ngIf=\"passwordComponent.containAtLeastOneLowerCaseLetter; then done else error\" @flipY>\n          </div>\n          <ng-template #done>\n            <mat-icon @positiveState color=\"primary\">done</mat-icon>\n          </ng-template>\n          <ng-template #error>\n            <mat-icon @negativeState color=\"warn\">error</mat-icon>\n          </ng-template>\n          <span>{{lowerCaseCriteriaMsg}}</span>\n        </div>\n\n        <div class=\"info-row\" @items *ngIf=\"passwordComponent.enableUpperCaseLetterRule\">\n          <div *ngIf=\"passwordComponent.containAtLeastOneUpperCaseLetter; then done else error\">\n          </div>\n          <ng-template #done>\n            <mat-icon @positiveState color=\"primary\">done</mat-icon>\n          </ng-template>\n          <ng-template #error>\n            <mat-icon @negativeState color=\"warn\">error</mat-icon>\n          </ng-template>\n          <span>{{upperCaseCriteriaMsg}}</span>\n        </div>\n\n        <div class=\"info-row\" @items *ngIf=\"passwordComponent.enableDigitRule\">\n          <div *ngIf=\"passwordComponent.containAtLeastOneDigit; then done else error\">\n          </div>\n          <ng-template #done>\n            <mat-icon @positiveState color=\"primary\">done</mat-icon>\n          </ng-template>\n          <ng-template #error>\n            <mat-icon @negativeState color=\"warn\">error</mat-icon>\n          </ng-template>\n          <span>{{digitsCriteriaMsg}}</span>\n        </div>\n\n        <div class=\"info-row\" @items *ngIf=\"passwordComponent.enableSpecialCharRule\">\n          <div *ngIf=\"passwordComponent.containAtLeastOneSpecialChar; then done else error\">\n          </div>\n          <ng-template #done>\n            <mat-icon @positiveState color=\"primary\">done</mat-icon>\n          </ng-template>\n          <ng-template #error>\n            <mat-icon @negativeState color=\"warn\">error</mat-icon>\n          </ng-template>\n          <span>{{specialCharsCriteriaMsg}}</span>\n        </div>\n\n        <div class=\"info-row\" @items *ngIf=\"passwordComponent.enableLengthRule\">\n          <div *ngIf=\"passwordComponent.containAtLeastMinChars; then done else error\">\n          </div>\n          <ng-template #done>\n            <mat-icon @positiveState color=\"primary\">done</mat-icon>\n          </ng-template>\n          <ng-template #error>\n            <mat-icon @negativeState color=\"warn\">error</mat-icon>\n          </ng-template>\n          <span>{{minCharsCriteriaMsg}}</span>\n        </div>\n\n        <div class=\"info-row\" @items *ngIf=\"passwordComponent.customValidator\">\n          <div *ngIf=\"passwordComponent.containAtCustomChars; then done else error\">\n          </div>\n          <ng-template #done>\n            <mat-icon @positiveState color=\"primary\">done</mat-icon>\n          </ng-template>\n          <ng-template #error>\n            <mat-icon @negativeState color=\"warn\">error</mat-icon>\n          </ng-template>\n          <span>{{customCharsCriteriaMsg}}</span>\n        </div>\n\n        <div *ngIf=\"enableScoreInfo\" class=\"info-row\" @items>\n          <div *ngIf=\"passwordComponent.strength === 100; then done else error\">\n          </div>\n          <ng-template #done>\n            <mat-icon @positiveState color=\"primary\">done</mat-icon>\n          </ng-template>\n          <ng-template #error>\n            <mat-icon @negativeState color=\"warn\">error</mat-icon>\n          </ng-template>\n          <span>Password's strength = {{passwordComponent.strength}} %100</span>\n        </div>\n\n      </mat-card-content>\n    </mat-card>\n  ",
-                        styles: ["\n    mat-card{flex-direction:row;place-content:stretch center;flex:1 1 0}mat-card,mat-card mat-card-content{box-sizing:border-box;display:flex;align-items:stretch}mat-card mat-card-content{flex-direction:column;max-width:100%;place-content:stretch flex-start}mat-card mat-card-content mat-icon{margin-right:10px}mat-card mat-card-content .info-row{flex-direction:row;box-sizing:border-box;display:flex;align-items:center}\n  "],
+                        styles: ["\n    mat-card{-webkit-box-orient:horizontal;flex-direction:row;place-content:stretch center;-webkit-box-flex:1;flex:1 1 0}mat-card,mat-card mat-card-content{-webkit-box-direction:normal;box-sizing:border-box;display:-webkit-box;display:flex;-webkit-box-align:stretch;align-items:stretch}mat-card mat-card-content{-webkit-box-orient:vertical;flex-direction:column;max-width:100%;place-content:stretch flex-start}mat-card mat-card-content mat-icon{margin-right:10px}mat-card mat-card-content .info-row{-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;box-sizing:border-box;display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center}\n  "],
                         animations: [
                             // nice stagger effect when showing existing elements
                             animations.trigger('list', [
@@ -661,16 +661,6 @@
         ];
         return MatPasswordStrengthModule;
     }());
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
-     */
-
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
-     */
 
     exports.MatPassToggleVisibilityComponent = MatPassToggleVisibilityComponent;
     exports.MatPasswordStrengthComponent = MatPasswordStrengthComponent;

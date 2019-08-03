@@ -5,7 +5,6 @@ import { Criteria } from '../../enum/criteria.enum';
 import { MatPasswordStrengthValidator } from '../../validator/mat-password-strength-validator';
 export declare class MatPasswordStrengthComponent implements OnInit, OnChanges {
     password: string;
-    customValidator: RegExp;
     externalError: boolean;
     enableLengthRule: boolean;
     enableLowerCaseLetterRule: boolean;
@@ -14,6 +13,7 @@ export declare class MatPasswordStrengthComponent implements OnInit, OnChanges {
     enableSpecialCharRule: boolean;
     min: number;
     max: number;
+    customValidator: RegExp;
     onStrengthChanged: EventEmitter<number>;
     criteriaMap: Map<Criteria, RegExp>;
     containAtLeastMinChars: boolean;
