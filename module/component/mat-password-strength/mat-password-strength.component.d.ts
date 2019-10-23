@@ -14,6 +14,8 @@ export declare class MatPasswordStrengthComponent implements OnInit, OnChanges {
     min: number;
     max: number;
     customValidator: RegExp;
+    warnThreshold: number;
+    accentThreshold: number;
     onStrengthChanged: EventEmitter<number>;
     criteriaMap: Map<Criteria, RegExp>;
     containAtLeastMinChars: boolean;

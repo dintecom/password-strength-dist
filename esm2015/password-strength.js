@@ -120,6 +120,8 @@ class MatPasswordStrengthComponent {
         this.enableSpecialCharRule = true;
         this.min = 8;
         this.max = 30;
+        this.warnThreshold = 21;
+        this.accentThreshold = 81;
         this.onStrengthChanged = new EventEmitter();
         this.criteriaMap = new Map();
         // TO ACCESS VIA CONTENT CHILD
@@ -168,10 +170,10 @@ class MatPasswordStrengthComponent {
      * @return {?}
      */
     get color() {
-        if (this._strength <= 20) {
+        if (this._strength < this.warnThreshold) {
             return Colors.warn;
         }
-        else if (this._strength <= 80) {
+        else if (this._strength < this.accentThreshold) {
             return Colors.accent;
         }
         else {
@@ -360,6 +362,8 @@ MatPasswordStrengthComponent.propDecorators = {
     min: [{ type: Input }],
     max: [{ type: Input }],
     customValidator: [{ type: Input }],
+    warnThreshold: [{ type: Input }],
+    accentThreshold: [{ type: Input }],
     onStrengthChanged: [{ type: Output }]
 };
 
@@ -540,7 +544,7 @@ MatPasswordStrengthInfoComponent.decorators = [
     </mat-card>
   `,
                 styles: [`
-    mat-card{-webkit-box-orient:horizontal;flex-direction:row;place-content:stretch center;-webkit-box-flex:1;flex:1 1 0}mat-card,mat-card mat-card-content{-webkit-box-direction:normal;box-sizing:border-box;display:-webkit-box;display:flex;-webkit-box-align:stretch;align-items:stretch}mat-card mat-card-content{-webkit-box-orient:vertical;flex-direction:column;max-width:100%;place-content:stretch flex-start}mat-card mat-card-content mat-icon{margin-right:10px}mat-card mat-card-content .info-row{-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;box-sizing:border-box;display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center}
+    mat-card{flex-direction:row;place-content:stretch center;flex:1 1 0}mat-card,mat-card mat-card-content{box-sizing:border-box;display:flex;align-items:stretch}mat-card mat-card-content{flex-direction:column;max-width:100%;place-content:stretch flex-start}mat-card mat-card-content mat-icon{margin-right:10px}mat-card mat-card-content .info-row{flex-direction:row;box-sizing:border-box;display:flex;align-items:center}
   `],
                 animations: [
                     // nice stagger effect when showing existing elements
