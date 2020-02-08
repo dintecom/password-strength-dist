@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, ViewEncapsulation, NgModule } from '@angular/core';
-import { MatProgressBarModule, MatCardModule, MatIconModule, MatRippleModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatRippleModule } from '@angular/material/core';
 import { Validators, FormControl } from '@angular/forms';
 import { animation, style, animate, keyframes, trigger, transition, query, stagger, animateChild, useAnimation } from '@angular/animations';
 

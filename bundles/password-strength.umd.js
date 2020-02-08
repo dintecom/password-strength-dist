@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('@angular/core'), require('@angular/material'), require('@angular/forms'), require('@angular/animations')) :
-    typeof define === 'function' && define.amd ? define(['exports', '@angular/common', '@angular/core', '@angular/material', '@angular/forms', '@angular/animations'], factory) :
-    (global = global || self, factory(global.angularMaterialExtensionsPasswordStrength = {}, global.ng.common, global.ng.core, global.ng.material, global.ng.forms, global.ng.animations));
-}(this, function (exports, common, core, material, forms, animations) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/common'), require('@angular/core'), require('@angular/material/card'), require('@angular/material/icon'), require('@angular/material/progress-bar'), require('@angular/material/core'), require('@angular/forms'), require('@angular/animations')) :
+    typeof define === 'function' && define.amd ? define(['exports', '@angular/common', '@angular/core', '@angular/material/card', '@angular/material/icon', '@angular/material/progress-bar', '@angular/material/core', '@angular/forms', '@angular/animations'], factory) :
+    (global = global || self, factory(global.angularMaterialExtensionsPasswordStrength = {}, global.ng.common, global.ng.core, global.card, global.icon, global.progressBar, global.core$1, global.ng.forms, global.ng.animations));
+}(this, function (exports, common, core, card, icon, progressBar, core$1, forms, animations) { 'use strict';
 
     /**
      * @fileoverview added by tsickle
@@ -645,10 +645,10 @@
             { type: core.NgModule, args: [{
                         imports: [
                             common.CommonModule,
-                            material.MatProgressBarModule,
-                            material.MatCardModule,
-                            material.MatIconModule,
-                            material.MatRippleModule
+                            progressBar.MatProgressBarModule,
+                            card.MatCardModule,
+                            icon.MatIconModule,
+                            core$1.MatRippleModule
                         ],
                         exports: [
                             MatPasswordStrengthComponent,

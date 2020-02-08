@@ -1,6 +1,6 @@
 import { EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, ValidatorFn } from '@angular/forms';
-import { ThemePalette } from '@angular/material';
+import { ThemePalette } from '@angular/material/core';
 import { Criteria } from '../../enum/criteria.enum';
 import { MatPasswordStrengthValidator } from '../../validator/mat-password-strength-validator';
 export declare class MatPasswordStrengthComponent implements OnInit, OnChanges {
