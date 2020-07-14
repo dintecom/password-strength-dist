@@ -1,7 +1,18 @@
 {
   "name": "@angular-material-extensions/password-strength",
-  "version": "4.1.2",
   "description": "Material password strength meter to indicate how secure is the provided password",
+  "version": "5.1.0",
+  "homepage": "https://github.com/angular-material-extensions/password-strength",
+  "author": {
+    "name": "anthonynahas",
+    "url": "https://github.com/anthonynahas"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/angular-material-extensions/password-strength.git"
+  },
+  "license": "MIT",
+  "schematics": "./schematics/collection.json",
   "keywords": [
     "ngx",
     "library",
@@ -14,30 +25,98 @@
     " password-strength info",
     " strength-meter"
   ],
-  "author": {
-    "name": "anthonynahas",
-    "url": "https://github.com/anthonynahas"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/angular-material-extensions/password-strength.git"
-  },
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/angular-material-extensions/password-strength/issues"
   },
-  "homepage": "https://github.com/angular-material-extensions/password-strength",
-  "schematics": "./schematics/collection.json",
-  "main": "./bundles/password-strength.umd.js",
-  "module": "./esm5/password-strength.es5.js",
-  "es2015": "./esm2015/password-strength.js",
-  "typings": "./password-strength.d.ts",
   "peerDependencies": {
-    "@angular/animations": "^8.2.14",
-    "@angular/cdk": "^8.2.3",
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14",
-    "@angular/forms": "^8.2.14",
-    "@angular/material": "^8.2.3"
-  }
+    "@angular/common": "^9.0.0",
+    "@angular/core": "^9.0.0",
+    "@angular/forms": "^9.0.0",
+    "@angular/cdk": "^9.0.0",
+    "@angular/material": "^9.0.0",
+    "tslib": "^1.10.0"
+  },
+  "engines": {
+    "node": ">=10.13"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": true,
+      "publishPath": "../../../dist/angular-material-extensions/password-strength"
+    },
+    "publishConfig": {
+      "access": "public"
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular",
+        "infile": "../../../CHANGELOG.md"
+      }
+    },
+    "hooks": {
+      "before:init": [
+        "npm run clean"
+      ],
+      "after:bump": "echo \"building lib v${version}... \" && npm run build",
+      "before:git:release": "echo \"Updating CHANGELOG.md for v${version} \" && git commit -m \"Updating CHANGELOG.md for v${version} \" ../../../CHANGELOG.md",
+      "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}.",
+      "before:npm": "echo building the library..."
+    }
+  },
+  "greenkeeper": {
+    "ignore": [
+      "@angular/core",
+      "@angular/common",
+      "@angular/compiler",
+      "@angular/cdk",
+      "@angular/material",
+      "@angular/platform-server",
+      "@angular/platform-browser",
+      "@angular/platform-browser-dynamic",
+      "@angular/compiler-cli",
+      "webpack",
+      "zone.js",
+      "rxjs",
+      "tslint",
+      "gulp-tslint",
+      "typescript",
+      "awesome-typescript-loader",
+      "codelyzer",
+      "@angular/animations",
+      "@types/jasmine",
+      "@types/jest",
+      "@types/node",
+      "conventional-github-releaser",
+      "rollup-plugin-uglify"
+    ]
+  },
+  "commitplease": {
+    "style": "angular",
+    "types": [
+      "feat",
+      "fix",
+      "docs",
+      "style",
+      "refactor",
+      "perf",
+      "test",
+      "chore",
+      "revert",
+      "demo"
+    ],
+    "scope": "\\S+.*"
+  },
+  "main": "bundles/angular-material-extensions-password-strength.umd.js",
+  "module": "fesm5/angular-material-extensions-password-strength.js",
+  "es2015": "fesm2015/angular-material-extensions-password-strength.js",
+  "esm5": "esm5/angular-material-extensions-password-strength.js",
+  "esm2015": "esm2015/angular-material-extensions-password-strength.js",
+  "fesm5": "fesm5/angular-material-extensions-password-strength.js",
+  "fesm2015": "fesm2015/angular-material-extensions-password-strength.js",
+  "typings": "angular-material-extensions-password-strength.d.ts",
+  "metadata": "angular-material-extensions-password-strength.metadata.json",
+  "sideEffects": false
 }
