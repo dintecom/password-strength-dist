@@ -1,9 +1,9 @@
-import { EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { FormControl, ValidatorFn } from '@angular/forms';
-import { Criteria } from '../../enum/criteria.enum';
-import { MatPasswordStrengthValidator } from '../../validator/mat-password-strength-validator';
+import { AfterContentChecked, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ControlValueAccessor, FormControl, ValidatorFn } from '@angular/forms';
+import { Criteria } from '../../enum';
+import { MatPasswordStrengthValidator } from '../../validator';
 import { ThemePalette } from '@angular/material/core';
-export declare class MatPasswordStrengthComponent implements OnInit, OnChanges {
+export declare class MatPasswordStrengthComponent implements OnInit, OnChanges, AfterContentChecked, ControlValueAccessor {
     password: string;
     externalError: boolean;
     enableLengthRule: boolean;
@@ -27,22 +27,28 @@ export declare class MatPasswordStrengthComponent implements OnInit, OnChanges {
     passwordFormControl: FormControl;
     passwordConfirmationFormControl: FormControl;
     validatorsArray: ValidatorFn[];
-    private _strength;
-    private _color;
     Validators: ValidatorFn;
     matPasswordStrengthValidator: MatPasswordStrengthValidator;
+    private _strength;
+    get strength(): number;
+    private _color;
+    get color(): ThemePalette;
+    propagateChange: (_: any) => void;
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
-    get strength(): number;
-    get color(): ThemePalette;
+    parseCustomValidatorsRegex(value?: string | RegExp): RegExp;
+    setRulesAndValidators(): void;
+    calculatePasswordStrength(): void;
+    reset(): void;
+    writeValue(obj: any): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState?(isDisabled: boolean): void;
     private _containAtLeastMinChars;
     private _containAtLeastOneLowerCaseLetter;
     private _containAtLeastOneUpperCaseLetter;
     private _containAtLeastOneDigit;
     private _containAtLeastOneSpecialChar;
     private _containCustomChars;
-    parseCustomValidatorsRegex(value?: string | RegExp): RegExp;
-    setRulesAndValidators(): void;
-    calculatePasswordStrength(): void;
-    reset(): void;
+    ngAfterContentChecked(): void;
 }

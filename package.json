@@ -1,7 +1,7 @@
 {
   "name": "@angular-material-extensions/password-strength",
   "description": "Material password strength meter to indicate how secure is the provided password",
-  "version": "5.1.0",
+  "version": "7.0.0",
   "homepage": "https://github.com/angular-material-extensions/password-strength",
   "author": {
     "name": "anthonynahas",
@@ -29,12 +29,11 @@
     "url": "https://github.com/angular-material-extensions/password-strength/issues"
   },
   "peerDependencies": {
-    "@angular/common": "^9.0.0",
-    "@angular/core": "^9.0.0",
-    "@angular/forms": "^9.0.0",
-    "@angular/cdk": "^9.0.0",
-    "@angular/material": "^9.0.0",
-    "tslib": "^1.10.0"
+    "@angular/common": "^10.0.14",
+    "@angular/core": "^10.0.14",
+    "@angular/forms": "^10.0.14",
+    "@angular/cdk": "^10.1.3",
+    "@angular/material": "^10.1.3"
   },
   "engines": {
     "node": ">=10.13"
@@ -109,12 +108,13 @@
     ],
     "scope": "\\S+.*"
   },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "main": "bundles/angular-material-extensions-password-strength.umd.js",
-  "module": "fesm5/angular-material-extensions-password-strength.js",
+  "module": "fesm2015/angular-material-extensions-password-strength.js",
   "es2015": "fesm2015/angular-material-extensions-password-strength.js",
-  "esm5": "esm5/angular-material-extensions-password-strength.js",
   "esm2015": "esm2015/angular-material-extensions-password-strength.js",
-  "fesm5": "fesm5/angular-material-extensions-password-strength.js",
   "fesm2015": "fesm2015/angular-material-extensions-password-strength.js",
   "typings": "angular-material-extensions-password-strength.d.ts",
   "metadata": "angular-material-extensions-password-strength.metadata.json",

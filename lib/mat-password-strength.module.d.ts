@@ -5,5 +5,5 @@ export { MatPassToggleVisibilityComponent } from './component/mat-pass-toggle-vi
 export { MatPasswordStrengthValidator } from './validator/mat-password-strength-validator';
 export { RegExpValidator } from './validator/regexp.class';
 export declare class MatPasswordStrengthModule {
-    static forRoot(): ModuleWithProviders;
+    static forRoot(): ModuleWithProviders<MatPasswordStrengthModule>;
 }
