@@ -1,7 +1,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/forms'), require('@angular/animations'), require('@angular/common'), require('@angular/material/progress-bar'), require('@angular/material/core'), require('@angular/material/card'), require('@angular/material/icon')) :
     typeof define === 'function' && define.amd ? define('@angular-material-extensions/password-strength', ['exports', '@angular/core', '@angular/forms', '@angular/animations', '@angular/common', '@angular/material/progress-bar', '@angular/material/core', '@angular/material/card', '@angular/material/icon'], factory) :
-    (global = global || self, factory((global['angular-material-extensions'] = global['angular-material-extensions'] || {}, global['angular-material-extensions']['password-strength'] = {}), global.ng.core, global.ng.forms, global.ng.animations, global.ng.common, global.ng.material.progressBar, global.ng.material.core, global.ng.material.card, global.ng.material.icon));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global['angular-material-extensions'] = global['angular-material-extensions'] || {}, global['angular-material-extensions']['password-strength'] = {}), global.ng.core, global.ng.forms, global.ng.animations, global.ng.common, global.ng.material.progressBar, global.ng.material.core, global.ng.material.card, global.ng.material.icon));
 }(this, (function (exports, core, forms, animations, common, progressBar, core$1, card, icon) { 'use strict';
 
     (function (Colors) {
